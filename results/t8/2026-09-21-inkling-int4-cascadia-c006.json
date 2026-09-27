@@ -6,7 +6,7 @@
   "runtime": "cascadia",
   "runtimeVersion": "autolab release 1790016660; OpenVINO 2026.3.1",
   "runtimeFlags": "11-stage CPU+iGPU pipeline; INT4 group-32 experts; INT8 attention/head; FP16 fused MoE; 8-row prefill; 6 concurrent requests; temp=0; max_tokens=128; learned speculation for lone stream",
-  "customRuntime": "Cascadia Inkling autolab",
+  "customRuntime": "1",
   "revision": "sha256:9084392040688eaa6aa9ff6cf6d222f84e24e119e528d91920d12ddd106563c2",
   "decodeTps": 13.887655075516644,
   "ttftMs": 4199.558854103088,

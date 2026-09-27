@@ -71,12 +71,11 @@ Select only phase names starting with `mixed_`, group by `streams`, and apply th
 
 ## Submission dependencies
 
-The result files reference **[Panther Lake Lab, rig 8](https://intelinside.ai/rigs/8)**, owned by `t8`, with eleven Core Ultra X7 358H CPUs and eleven Arc B390 iGPUs. The custom runtime name **Cascadia Inkling autolab** is a pending registration; replace it with the resulting numeric ID once created.
+The result files reference **[Panther Lake Lab, rig 8](https://intelinside.ai/rigs/8)**, owned by `t8`, with eleven Core Ultra X7 358H CPUs and eleven Arc B390 iGPUs, and **[Cascadia Inkling Autolab, custom runtime 1](https://intelinside.ai/runtimes/cascadia/custom/1)**. Both registrations are complete and the result files use their numeric IDs.
 
 Before these results can pass hosted ingestion:
 
 1. Merge and deploy [catalog PR #51](https://github.com/labscommunity/intelinside/pull/51), which adds Inkling and its generated model/INT4 migration. The ingestion workflow validates against the catalog on `main` and the hosted database.
-2. Register the experimental runtime under Cascadia. Use the source branch and serving binary revision recorded above.
-3. Rerun result ingestion validation. Merge the result PR only after it accepts the linked account, rig ownership, model/quant board and custom runtime.
+2. Rerun result ingestion validation. Merge the result PR only after it accepts the linked account, rig ownership, model/quant board and custom runtime.
 
 The experimental build is submitted as a custom runtime. Whole-fleet results omit `component` because the run uses both CPU and iGPU across all eleven nodes.
