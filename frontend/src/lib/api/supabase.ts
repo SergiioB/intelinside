@@ -1,6 +1,7 @@
 import { supabase, signOutSupabase } from '@/lib/auth'
 import { RegExpMatcher, englishDataset, englishRecommendedTransformers } from 'obscenity'
 import { hostIn } from '@/lib/hardware'
+import { rigSummaryLine } from '@/lib/rig-summary'
 import { HARDWARE_BY_ID, MODELS, MODEL_BY_ID, QUANTS, QUANT_BY_ID, RUNTIMES, RUNTIME_BY_ID, VISIBLE_HARDWARE } from '@/catalog'
 import type {
   Api, BestRank, BoardKind, BoardParams, BoardResponse, BoardRow, BoardUnit, ChartBar, FlagReason,
@@ -208,21 +209,7 @@ function publicUser(row: ProfileRow): User {
 }
 
 function summaryLine(components: ComponentRow[]): string {
-  const parts: string[] = []
-  const cpu = components.find((part) => HARDWARE_BY_ID[part.hardware_id]?.type === 'cpu')
-  if (cpu) parts.push(HARDWARE_BY_ID[cpu.hardware_id].name)
-  const gpus = components.filter((part) => HARDWARE_BY_ID[part.hardware_id]?.type === 'gpu')
-  for (const gpu of gpus) parts.push(`${gpu.quantity}× ${HARDWARE_BY_ID[gpu.hardware_id].name}`)
-  if (!gpus.length) {
-    const integrated = components.find((part) => HARDWARE_BY_ID[part.hardware_id]?.type === 'igpu')
-    if (integrated) parts.push(HARDWARE_BY_ID[integrated.hardware_id].name)
-  }
-  const memory = components.filter((part) => HARDWARE_BY_ID[part.hardware_id]?.type === 'ram')
-  if (memory.length) {
-    const total = memory.reduce((sum, part) => sum + part.quantity * Number(HARDWARE_BY_ID[part.hardware_id].specs.capacityGb ?? 0), 0)
-    parts.push(`${total} GB ${HARDWARE_BY_ID[memory[0].hardware_id].specs.type ?? ''}`.trim())
-  }
-  return parts.join(' · ')
+  return rigSummaryLine(components.map((c) => ({ hardwareId: c.hardware_id, quantity: c.quantity })))
 }
 
 function view(snapshot: Snapshot) {
