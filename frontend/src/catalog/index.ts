@@ -12,6 +12,7 @@ export const RUNTIMES: Runtime[] = [
   { id: 'ollama', name: 'Ollama', logoUrl: '', repoUrl: 'https://github.com/ollama/ollama', color: '#b4b7bf' },
   { id: 'openvino-genai', name: 'OpenVINO GenAI', logoUrl: '', repoUrl: 'https://github.com/openvinotoolkit/openvino.genai', color: '#6ab8e4' },
   { id: 'ipex-llm', name: 'IPEX-LLM', logoUrl: '', repoUrl: 'https://github.com/intel/ipex-llm', color: '#64c6ad' },
+  { id: 'exl3xpu', name: 'EXL3 XPU', logoUrl: '', repoUrl: 'https://github.com/0xSero/exl3xpu', color: '#e8875a' },
 ]
 
 export const QUANTS: Quant[] = [
@@ -32,6 +33,7 @@ export const QUANTS: Quant[] = [
   { id: 'gptq-4bit', label: 'GPTQ 4-bit', bits: 4, format: 'GPTQ' },
   { id: 'nf4', label: 'NF4', bits: 4, format: 'bitsandbytes' },
   { id: 'mxfp4', label: 'MXFP4', bits: 4, format: 'Microscaling FP4' },
+  { id: 'exl3-4bpw', label: 'EXL3 4bpw', bits: 4, format: 'EXL3 trellis quantization (ExLlamaV3), ~4 bits per weight' },
 ]
 
 export const MODELS: Model[] = [
@@ -157,7 +159,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'qwen3-8-27b', name: 'Qwen3.8-27B', family: 'Qwen3.8', brand: 'Qwen', params: '27B', architecture: 'dense',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-27B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'int8', 'q4_k_m', 'q4_k_l', 'q8_0'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-27B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'int8', 'q4_k_m', 'q4_k_l', 'q8_0', 'exl3-4bpw'],
   },
   {
     id: 'qwen3-8-flash-next', name: 'Qwen3.8-Flash-Next', family: 'Qwen3.8', brand: 'Qwen', params: '125B', architecture: 'moe', activeParams: '6B',
