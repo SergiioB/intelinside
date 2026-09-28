@@ -66,6 +66,10 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/ibm-granite/granite-4.2-8b', logoUrl: '/logos/models/granite.svg', brandColor: '#8fa8d8', quants: ['int4', 'q4_k_m', 'q8_0', 'fp16'],
   },
   {
+    id: 'inkling', name: 'Inkling', family: 'Inkling', brand: 'Inkling', params: '975B', architecture: 'moe', activeParams: '41B',
+    sourceUrl: 'https://huggingface.co/thinkingmachines/Inkling', brandColor: '#e89960', quants: ['int4'],
+  },
+  {
     id: 'lfm2-5-2-6b', name: 'LFM2.5-2.6B', family: 'LFM2.5', brand: 'LFM', params: '2.6B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/LiquidAI/LFM2.5-2.6B', logoUrl: '/logos/models/liquid.svg', brandColor: '#6fc3d6', quants: ['int4', 'int8', 'q4_k_m', 'q8_0', 'fp16'],
   },
