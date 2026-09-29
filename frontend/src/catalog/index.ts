@@ -249,7 +249,7 @@ export const HARDWARE: HardwareItem[] = [
 
 export const HARDWARE_BY_ID: Record<string, HardwareItem> = Object.fromEntries(HARDWARE.map((h) => [h.id, h]))
 /** Hardware currently exposed in browsing and rig-building UIs. */
-export const VISIBLE_HARDWARE = HARDWARE.filter((h) => h.vendor === 'Intel' || h.vendor === 'Generic')
+export const VISIBLE_HARDWARE = HARDWARE.filter((h) => h.vendor === 'Intel' || h.vendor === 'AMD' || h.vendor === 'Generic')
 export const RUNTIME_BY_ID: Record<string, Runtime> = Object.fromEntries(RUNTIMES.map((r) => [r.id, r]))
 export const MODEL_BY_ID: Record<string, Model> = Object.fromEntries(MODELS.map((m) => [m.id, m]))
 export const QUANT_BY_ID: Record<string, Quant> = Object.fromEntries(QUANTS.map((q) => [q.id, q]))
