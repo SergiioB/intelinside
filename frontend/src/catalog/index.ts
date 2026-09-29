@@ -80,6 +80,10 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/thinkingmachines/Inkling', brandColor: '#e89960', quants: ['int4'],
   },
   {
+    id: 'laguna-xs-2-1', name: 'Laguna XS 2.1', family: 'Laguna XS', brand: 'Poolside', params: '33B', architecture: 'moe', activeParams: '3B',
+    sourceUrl: 'https://huggingface.co/poolside/Laguna-XS-2.1', logoUrl: '/logos/models/poolside.png', brandColor: '#7fd4a8', quants: ['q4_k_m'],
+  },
+  {
     id: 'lfm2-5-2-6b', name: 'LFM2.5-2.6B', family: 'LFM2.5', brand: 'LFM', params: '2.6B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/LiquidAI/LFM2.5-2.6B', logoUrl: '/logos/models/liquid.svg', brandColor: '#6fc3d6', quants: ['int4', 'int8', 'q4_k_m', 'q8_0', 'fp16'],
   },
