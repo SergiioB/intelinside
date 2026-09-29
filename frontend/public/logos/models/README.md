@@ -33,6 +33,12 @@ available, and record the source here. For monochrome marks, replace
 `currentColor` with an explicit color that works on the site's tile backgrounds:
 SVGs loaded through `<img>` do not inherit the page's text color.
 
+`ornith.webp` is the unmodified organization avatar from
+[Ornith's Hugging Face profile](https://huggingface.co/ornith-ai), retrieved on 2026-09-29.
+[Original asset](https://cdn-avatars.huggingface.co/v1/production/uploads/68661bce022667cf9c7534fb/dwzGCqj9B7NGaJRO-NjjP.png).
+The source URL ends in `.png`, but the downloaded asset is a 200 × 200 WebP;
+the local extension matches its actual format. The logo remains its owner's trademark.
+
 `poolside.png` is the unmodified 200 × 200 organization avatar from
 [Poolside’s official Hugging Face page](https://huggingface.co/poolside),
 retrieved on 2026-09-29 from [Hugging Face’s avatar CDN](https://cdn-avatars.huggingface.co/v1/production/uploads/699484cbe85a4b61cbc5ee0f/GpYWuz-CovEFgbPOW21dZ.png).

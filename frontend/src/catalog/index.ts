@@ -112,6 +112,14 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/facebook/Muse-Glimmer-30B', logoUrl: '/logos/models/llama.svg', brandColor: '#73b0ee', quants: ['int4', 'q4_k_xl'],
   },
   {
+    id: 'ornith-1-5-35b-a3b', name: 'Ornith 1.5 35B A3B', family: 'Ornith 1.5', brand: 'Ornith', params: '35B', architecture: 'moe', activeParams: '3B',
+    sourceUrl: 'https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B', logoUrl: '/logos/models/ornith.webp', brandColor: '#7fb5d9', quants: ['int4'],
+  },
+  {
+    id: 'ornith-1-5-9b', name: 'Ornith 1.5 9B', family: 'Ornith 1.5', brand: 'Ornith', params: '9B', architecture: 'dense',
+    sourceUrl: 'https://huggingface.co/ornith-ai/Ornith-1.5-9B', logoUrl: '/logos/models/ornith.webp', brandColor: '#7fb5d9', quants: ['int4'],
+  },
+  {
     id: 'qwen3-30b-a3b', name: 'Qwen3-30B-A3B', family: 'Qwen3', brand: 'Qwen', params: '30B', architecture: 'moe', activeParams: '3B',
     sourceUrl: 'https://huggingface.co/Qwen/Qwen3-30B-A3B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'q4_k_m', 'q8_0'],
   },
