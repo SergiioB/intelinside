@@ -40,11 +40,11 @@ export const QUANTS: Quant[] = [
 
 export const MODELS: Model[] = [
   {
-    id: 'bonsai-2-27b', name: 'Bonsai 2 27B', family: 'Bonsai 2', brand: 'Bonsai', params: '27B', architecture: 'dense',
+    id: 'bonsai-2-27b', name: 'Bonsai 2 27B', family: 'Bonsai 2', brand: 'PrismML', params: '27B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf', brandColor: '#4e9e5c', quants: ['ptq1_0'],
   },
   {
-    id: 'bonsai-27b', name: 'Bonsai 27B', family: 'Bonsai', brand: 'Bonsai', params: '27B', architecture: 'dense',
+    id: 'bonsai-27b', name: 'Bonsai 27B', family: 'Bonsai', brand: 'PrismML', params: '27B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/prism-ml/Bonsai-27B-gguf', brandColor: '#4e9e5c', quants: ['u1'],
   },
   {
