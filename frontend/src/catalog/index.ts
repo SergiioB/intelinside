@@ -71,7 +71,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'laguna-xs-2-1', name: 'Laguna XS 2.1', family: 'Laguna XS', brand: 'Poolside', params: '33B', architecture: 'moe', activeParams: '3B',
-    sourceUrl: 'https://huggingface.co/poolside/Laguna-XS-2.1', brandColor: '#7fd4a8', quants: ['q4_k_m'],
+    sourceUrl: 'https://huggingface.co/poolside/Laguna-XS-2.1', logoUrl: '/logos/models/poolside.png', brandColor: '#7fd4a8', quants: ['q4_k_m'],
   },
   {
     id: 'lfm2-5-2-6b', name: 'LFM2.5-2.6B', family: 'LFM2.5', brand: 'LFM', params: '2.6B', architecture: 'dense',
