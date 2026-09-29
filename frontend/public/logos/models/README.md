@@ -43,3 +43,18 @@ the local extension matches its actual format. The logo remains its owner's trad
 [Poolside’s official Hugging Face page](https://huggingface.co/poolside),
 retrieved on 2026-09-29 from [Hugging Face’s avatar CDN](https://cdn-avatars.huggingface.co/v1/production/uploads/699484cbe85a4b61cbc5ee0f/GpYWuz-CovEFgbPOW21dZ.png).
 It is Poolside’s trademark and is not covered by this repository’s MIT license.
+
+`thinking-machines.webp` is the unmodified 200 × 200 organization avatar from
+[Thinking Machines Lab’s Hugging Face profile](https://huggingface.co/thinkingmachines),
+retrieved on 2026-09-29 from [the original asset](https://cdn-avatars.huggingface.co/v1/production/uploads/680a76de1b8d08640089fab0/r60-JyW_pv4llgjEyDYj9.png).
+The source URL ends in `.png`, but the downloaded asset is WebP.
+It is used for Inkling, with its original black wordmark and white background.
+
+`prismml.jpg` is the unmodified 400 × 400 profile avatar from
+[PrismML’s X account](https://x.com/PrismML), retrieved on 2026-09-29 from
+[X’s image CDN](https://pbs.twimg.com/profile_images/2025105666692812800/QQOxLQPq.jpg).
+The asset URL was located through [Thread Reader’s profile mirror](https://threadreaderapp.com/user/PrismML).
+Both Bonsai models use this avatar: its original light background provides contrast
+for the dark mark without recoloring the logo.
+
+These logos remain their owners’ trademarks and are not covered by this repository’s MIT license.

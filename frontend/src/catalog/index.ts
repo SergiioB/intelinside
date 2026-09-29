@@ -41,11 +41,11 @@ export const QUANTS: Quant[] = [
 export const MODELS: Model[] = [
   {
     id: 'bonsai-2-27b', name: 'Bonsai 2 27B', family: 'Bonsai 2', brand: 'PrismML', params: '27B', architecture: 'dense',
-    sourceUrl: 'https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf', brandColor: '#4e9e5c', quants: ['ptq1_0'],
+    sourceUrl: 'https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf', logoUrl: '/logos/models/prismml.jpg', brandColor: '#4e9e5c', quants: ['ptq1_0'],
   },
   {
     id: 'bonsai-27b', name: 'Bonsai 27B', family: 'Bonsai', brand: 'PrismML', params: '27B', architecture: 'dense',
-    sourceUrl: 'https://huggingface.co/prism-ml/Bonsai-27B-gguf', brandColor: '#4e9e5c', quants: ['u1'],
+    sourceUrl: 'https://huggingface.co/prism-ml/Bonsai-27B-gguf', logoUrl: '/logos/models/prismml.jpg', brandColor: '#4e9e5c', quants: ['u1'],
   },
   {
     id: 'gemma-3-12b', name: 'Gemma 3 12B IT', family: 'Gemma 3', brand: 'Gemma', params: '12B', architecture: 'dense',
@@ -77,7 +77,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'inkling', name: 'Inkling', family: 'Inkling', brand: 'Inkling', params: '975B', architecture: 'moe', activeParams: '41B',
-    sourceUrl: 'https://huggingface.co/thinkingmachines/Inkling', brandColor: '#e89960', quants: ['int4'],
+    sourceUrl: 'https://huggingface.co/thinkingmachines/Inkling', logoUrl: '/logos/models/thinking-machines.webp', brandColor: '#e89960', quants: ['int4'],
   },
   {
     id: 'laguna-xs-2-1', name: 'Laguna XS 2.1', family: 'Laguna XS', brand: 'Poolside', params: '33B', architecture: 'moe', activeParams: '3B',
