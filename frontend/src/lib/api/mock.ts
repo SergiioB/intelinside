@@ -9,7 +9,8 @@ import { hardwareChart } from './hardware-chart'
 import { isEvidenceUrl } from '@/lib/evidence'
 import { hostIn } from '@/lib/hardware'
 import { HARDWARE_BY_ID, MODELS, MODEL_BY_ID, QUANTS, QUANT_BY_ID, RUNTIMES, RUNTIME_BY_ID, VISIBLE_HARDWARE } from '@/catalog'
-import { createSeed, rigSummaryLine, type SeedDb } from '@/mocks/seed'
+import { createSeed, type SeedDb } from '@/mocks/seed'
+import { rigSummaryLine } from '@/lib/rig-summary'
 
 // In-memory implementation of the API contract. Same ranking, thresholds, and
 // permission rules the backend will enforce, so every flow is clickable offline.
