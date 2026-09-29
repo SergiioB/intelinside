@@ -18,6 +18,7 @@ export const RUNTIMES: Runtime[] = [
 export const QUANTS: Quant[] = [
   { id: 'int4', label: 'INT4', bits: 4, format: 'OpenVINO and IPEX weight-only, used by Cascadia and Intel runtimes' },
   { id: 'int8', label: 'INT8', bits: 8, format: 'OpenVINO / IPEX weight-only' },
+  { id: 'u1', label: 'U1', bits: 1, format: 'OpenVINO INTBIT g128 1-bit, needs the custom Intel GPU plugin' },
   { id: 'fp8', label: 'FP8', bits: 8, format: 'FP8 e4m3' },
   { id: 'fp16', label: 'FP16', bits: 16, format: 'Half precision, the unquantized weights' },
   { id: 'bf16', label: 'BF16', bits: 16, format: 'Brain float' },
@@ -29,6 +30,7 @@ export const QUANTS: Quant[] = [
   { id: 'q5_k_m', label: 'Q5_K_M', bits: 5, format: 'GGUF' },
   { id: 'q6_k', label: 'Q6_K', bits: 6, format: 'GGUF' },
   { id: 'q8_0', label: 'Q8_0', bits: 8, format: 'GGUF, used by llama.cpp and Ollama' },
+  { id: 'ptq1_0', label: 'PTQ1_0', bits: 2, format: 'GGUF ternary (PrismML PTQ1_0, 1.75 bits/weight), fork-only packing' },
   { id: 'awq-4bit', label: 'AWQ 4-bit', bits: 4, format: 'AWQ' },
   { id: 'gptq-4bit', label: 'GPTQ 4-bit', bits: 4, format: 'GPTQ' },
   { id: 'nf4', label: 'NF4', bits: 4, format: 'bitsandbytes' },
@@ -37,6 +39,14 @@ export const QUANTS: Quant[] = [
 ]
 
 export const MODELS: Model[] = [
+  {
+    id: 'bonsai-2-27b', name: 'Bonsai 2 27B', family: 'Bonsai 2', brand: 'PrismML', params: '27B', architecture: 'dense',
+    sourceUrl: 'https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf', brandColor: '#4e9e5c', quants: ['ptq1_0'],
+  },
+  {
+    id: 'bonsai-27b', name: 'Bonsai 27B', family: 'Bonsai', brand: 'PrismML', params: '27B', architecture: 'dense',
+    sourceUrl: 'https://huggingface.co/prism-ml/Bonsai-27B-gguf', brandColor: '#4e9e5c', quants: ['u1'],
+  },
   {
     id: 'gemma-3-12b', name: 'Gemma 3 12B IT', family: 'Gemma 3', brand: 'Gemma', params: '12B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/google/gemma-3-12b-it', logoUrl: '/logos/models/gemma.svg', brandColor: '#6dc799', quants: ['int4', 'q4_k_m', 'q8_0'],
@@ -70,6 +80,10 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/thinkingmachines/Inkling', brandColor: '#e89960', quants: ['int4'],
   },
   {
+    id: 'laguna-xs-2-1', name: 'Laguna XS 2.1', family: 'Laguna XS', brand: 'Poolside', params: '33B', architecture: 'moe', activeParams: '3B',
+    sourceUrl: 'https://huggingface.co/poolside/Laguna-XS-2.1', logoUrl: '/logos/models/poolside.png', brandColor: '#7fd4a8', quants: ['q4_k_m'],
+  },
+  {
     id: 'lfm2-5-2-6b', name: 'LFM2.5-2.6B', family: 'LFM2.5', brand: 'LFM', params: '2.6B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/LiquidAI/LFM2.5-2.6B', logoUrl: '/logos/models/liquid.svg', brandColor: '#6fc3d6', quants: ['int4', 'int8', 'q4_k_m', 'q8_0', 'fp16'],
   },
@@ -95,7 +109,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'muse-glimmer-30b', name: 'Muse Glimmer 30B', family: 'Muse', brand: 'Muse', params: '30B', architecture: 'dense',
-    sourceUrl: 'https://huggingface.co/facebook/Muse-Glimmer-30B', logoUrl: '/logos/models/llama.svg', brandColor: '#73b0ee', quants: ['q4_k_xl'],
+    sourceUrl: 'https://huggingface.co/facebook/Muse-Glimmer-30B', logoUrl: '/logos/models/llama.svg', brandColor: '#73b0ee', quants: ['int4', 'q4_k_xl'],
   },
   {
     id: 'ornith-1-5-35b-a3b', name: 'Ornith 1.5 35B A3B', family: 'Ornith 1.5', brand: 'Ornith', params: '35B', architecture: 'moe', activeParams: '3B',
