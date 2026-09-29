@@ -99,11 +99,11 @@ export const MODELS: Model[] = [
   },
   {
     id: 'ornith-1-5-35b-a3b', name: 'Ornith 1.5 35B A3B', family: 'Ornith 1.5', brand: 'Ornith', params: '35B', architecture: 'moe', activeParams: '3B',
-    sourceUrl: 'https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B', brandColor: '#7fb5d9', quants: ['int4'],
+    sourceUrl: 'https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B', logoUrl: '/logos/models/ornith.webp', brandColor: '#7fb5d9', quants: ['int4'],
   },
   {
     id: 'ornith-1-5-9b', name: 'Ornith 1.5 9B', family: 'Ornith 1.5', brand: 'Ornith', params: '9B', architecture: 'dense',
-    sourceUrl: 'https://huggingface.co/ornith-ai/Ornith-1.5-9B', brandColor: '#7fb5d9', quants: ['int4'],
+    sourceUrl: 'https://huggingface.co/ornith-ai/Ornith-1.5-9B', logoUrl: '/logos/models/ornith.webp', brandColor: '#7fb5d9', quants: ['int4'],
   },
   {
     id: 'qwen3-30b-a3b', name: 'Qwen3-30B-A3B', family: 'Qwen3', brand: 'Qwen', params: '30B', architecture: 'moe', activeParams: '3B',
