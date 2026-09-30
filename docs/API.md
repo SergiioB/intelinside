@@ -40,7 +40,9 @@ A CPU's `integrated` list is catalog data too. Results only ever name one part, 
 
 | Method | Path | Returns |
 |---|---|---|
-| GET | `/api/boards/:modelId/:quant?kind=rigs\|components&runtime=&vendor=&type=&verification=&q=&limit=&cursor=` | `{ board: BoardMeta, items: BoardRow[], nextCursor, chart: ChartBar[] }` |
+| GET | `/api/boards/:modelId/:quant?kind=rigs\|components&allSubmissions=&includeModified=&runtime=&vendor=&type=&verification=&q=&limit=&cursor=` | `{ board: BoardMeta, items: BoardRow[], nextCursor, chart: ChartBar[] }` |
+
+By default, boards keep only the best submission per rig or component and quantity. Set `allSubmissions=true` to return every published submission for the selected kind, ordered by decode tok/s descending with earliest run winning ties. Filters, stock-only defaults, and pagination apply to both views. `board.total` counts entries after filtering and grouping (or individual submissions in the all-submissions view), before pagination. The UI displays all submissions as an unranked results list; result-detail ranks continue to use the grouped leaderboard.
 
 `chart` is the top ten rows of the same filtered view, so the chart and the table always agree.
 

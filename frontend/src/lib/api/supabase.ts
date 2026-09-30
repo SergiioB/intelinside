@@ -382,7 +382,7 @@ function boardItems(results: Result[], modelId: string, quant: string, params: P
     }
     return true
   })
-  return bestPerKey(filtered, unitKey)
+  return bestPerKey(filtered, params.allSubmissions ? (result) => result.id : unitKey)
 }
 
 function boardRows(results: Result[], modelId: string, quant: string, params: BoardParams): BoardRow[] {

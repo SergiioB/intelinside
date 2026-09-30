@@ -212,6 +212,8 @@ export type CollectionInput = Pick<Collection, 'title' | 'description' | 'coverI
 export type Page<T> = { items: T[]; nextCursor?: string }
 export type BoardParams = {
   kind: BoardKind
+  /** Keep every submission instead of only the best per hardware configuration. */
+  allSubmissions?: boolean
   runtime?: string[]
   vendor?: string
   type?: HardwareType
