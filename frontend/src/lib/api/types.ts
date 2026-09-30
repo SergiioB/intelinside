@@ -117,6 +117,7 @@ export type CustomRuntime = {
   runtime?: Runtime
   name: string
   repoUrl: string
+  sourcePrUrl?: string
   /** One line on what changed. Shown on board rows and in the picker, so it is required. */
   summary: string
   notes?: string

@@ -66,6 +66,7 @@ type CustomRuntimeRow = {
   runtime_id: string
   name: string
   repo_url: string
+  source_pr_url?: string | null
   summary: string
   notes: string | null
   created_at: string
@@ -234,6 +235,7 @@ function view(snapshot: Snapshot) {
       runtime: RUNTIME_BY_ID[row.runtime_id],
       name: row.name,
       repoUrl: row.repo_url,
+      sourcePrUrl: optional(row.source_pr_url),
       summary: row.summary,
       notes: optional(row.notes),
       createdAt: row.created_at,
