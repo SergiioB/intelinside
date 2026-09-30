@@ -123,7 +123,22 @@ from existing import receipts without changing evidence, verification, or edit t
 Apply `20260918090000_optional_result_evidence.sql` before deploying the updated frontend
 and PR parser. An omitted link on create is stored as NULL; clearing it on edit sends NULL.
 
-Rig registration and custom-runtime registration remain site operations. Referenced
+Apply `20260930120000_pr_custom_runtimes.sql` **before** deploying the updated trusted
+workflow/parser and frontend. It extends the existing `ingest_pr_results` RPC
+compatibly; no Edge Function or new Actions secret is needed. This is a one-time
+migration, not a per-submission operation. The current service-role REST client
+cannot install database functions or tables, so code deployment alone cannot
+enable transactional registration imports.
+
+[Custom-runtime registration](../custom-runtimes/README.md) works without results.
+Registrations are inserted before results so `customRuntimeFile` references resolve
+inside the same transaction, including dry runs. Private registration receipts
+survive deletion, and browser column grants exclude `source_pr_url`. A repository
+advisory lock serializes imports; a table lock on custom runtimes also prevents
+concurrent site writes during duplicate detection and insertion. Matching sources
+use the conservative normalization policy documented in the registration guide.
+
+Rig registration remains a site operation. Referenced
 catalog entries must already exist in both the trusted default-branch catalog and
 the target database; merge/deploy catalog additions before submitting runs that use them.
 

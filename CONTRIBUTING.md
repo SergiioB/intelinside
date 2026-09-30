@@ -153,3 +153,5 @@ offering that work under the same licence, and confirming it is yours to give. T
 
 The brand assets are the exception. The Intelinside lockup and the Cascadia wordmark in
 `frontend/public/logos/` are not covered by the licence, and neither are the vendor logos beside them.
+
+Custom runtimes can also be registered with a [JSON-only PR](custom-runtimes/README.md), independently of benchmark results.
