@@ -2,8 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/custom-runtimes/schema.json",
   "runtime": "llamacpp",
   "name": "Jack llama.cpp PR ingestion test",
-  "repoUrl": "https://github.com/ggml-org/llama.cpp",
+  "repoUrl": "https://github.com/PrismML-Eng/llama.cpp",
   "summary": "Temporary registration fixture for testing custom-runtime PR ingestion. This does not represent a modified build.",
-  "notes": "Test entry requested by jackwsmth. The source is upstream llama.cpp, not a fork authored by this account. Remove the live registration after any merge test. No benchmark results are included.",
-  "ownerId": "00000000-0000-0000-0000-000000000001"
+  "notes": "Test entry requested by jackwsmth. The source is upstream llama.cpp, not a fork authored by this account. Remove the live registration after any merge test. No benchmark results are included."
 }
