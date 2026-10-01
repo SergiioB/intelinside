@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "1",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "nemotron-3-5-lightning-30b-a3b",
+  "quant": "gptq-4bit",
+  "runtime": "vllm",
+  "runtimeVersion": "0.30.0",
+  "customRuntimeFile": "custom-runtimes/SergiioB/b70-xpu-router-patch.json",
+  "revision": "ea65513442e08fc4",
+  "runtimeFlags": "DFlash n7; XPU graphs on; fp16 KV; --no-enable-prefix-caching; gptq/float16; gpu-mem-util 0.90; max-num-seqs 1; max-model-len 262144; router patch applied",
+  "decodeTps": 199.76,
+  "promptTps": 10197,
+  "ttftMs": 230,
+  "contextLength": 262144,
+  "batchSize": 1,
+  "runDate": "2026-10-01",
+  "notes": "FULL 262,144-TOKEN CONTEXT, functionally verified - not just a successful boot. Served on vllm/vllm-openai-xpu:v0.30.0 with the router patch registered as the custom runtime for this entry; that patch is required here, because without it the engine dies at init above max-model-len 16384 (see the custom runtime notes). Engine-reported KV pool at gpu-memory-utilization 0.90 with the DFlash draft loaded: 348,249 tokens, i.e. 1.33x a full 262,144-token request, with fp16 KV and max-num-seqs 1. Functional proof: needle-in-haystack with a unique fact planted at 10%, 50% and 90% depth of a 250,044-token prompt, greedy - 3/3 retrieved correctly. Decode 199.76 tok/s is the p2048/g128 C1 representative cell (median of 3, range 199.57-199.80, window acceptance 55.0%, all 3 reps byte-identical), the same cell and method as the 186.61 in the existing 2026-08-13 entry, measured at 230 W. promptTps 10197 is the isolated engine prefill metric (vllm:request_prefill_time_seconds delta) at 8208 prompt tokens, median of 3, TTFT 0.82 s - not a prompt/TTFT proxy. Measured context scaling on this stack at 230 W, constant generation task: decode 232.9 tok/s at 512 tokens, 60.6 at 131,072 and 37.0 at 250,000; isolated engine prefill 5,153 at p512, 9,198 at p2048, 8,892 at p32768, 5,585 at p131072 and 3,817 at p250000. Honesty notes: the target is a local symmetric GPTQ INT4 G64 conversion and the draft is a local NVFP4-to-BF16 reconstruction, not official HF quants; single card of a 2x B70 rig; with the draft loaded only one 262K request fits concurrently, and dropping the draft raises the pool to 1,318,604 tokens (5.03x). Do not read speculative acceptance off a ladder whose prompt varies with the length: a controlled constant-task test shows acceptance flat at ~60% from 512 to 250,000 tokens, so the drafter does not degrade at long context. Evidence and the full context/window charts are in the cookbook page listed under evidenceUrl.",
+  "evidenceUrl": "https://github.com/SergiioB/intel-arc-pro-b70-inference-cookbook/blob/master/docs/nemotron35-30a3/NEMOTRON-DFLASH-B70-VERIFIED-2C427EF4.md"
+}
