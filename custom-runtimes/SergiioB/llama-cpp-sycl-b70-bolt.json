@@ -1,0 +1,8 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/custom-runtimes/schema.json",
+  "runtime": "llamacpp",
+  "name": "llama.cpp SYCL + B70 Bolt patch",
+  "repoUrl": "https://github.com/SergiioB/intel-arc-pro-b70-inference-cookbook/blob/master/patches/llamacpp-sycl/llama.cpp-620d2225c-b70-bolt.patch",
+  "summary": "Upstream llama.cpp 620d2225c (b11669) plus one SYCL patch for Nemotron 3.5 Bolt on Arc Pro B70: fixes the DFlash drafter crash and adds a grouped XMX MoE GEMM path. Built with GGML_SYCL_F16=ON.",
+  "notes": "Patch file llama.cpp-620d2225c-b70-bolt.patch, sha256 51fe97fd2f76ee04adddcf4fc2c0fcb4158fed49d411edee0145a5b736f972f7, 12 files, including a row-strided OUT_PROD regression test in tests/test-backend-ops.cpp. Built from upstream .devops/intel.Dockerfile, target server, with GGML_SYCL_F16=ON. Public image: ghcr.io/sergiiob/llama.cpp-sycl-b70:b11669-bolt. Set GGML_SYCL_GROUPED_MAX_ROWS=0 at run time to use the grouped XMX MoE GEMM at every batch width. Results name the exact revision."
+}
