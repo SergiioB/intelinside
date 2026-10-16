@@ -11,7 +11,7 @@
   "decodeTps": 147.8,
   "promptTps": 68.0,
   "ttftMs": 338.4,
-  "contextLength": 150,
+  "contextLength": 143,
   "batchSize": 1,
   "runDate": "2026-10-16",
   "notes": "unsloth UD-Q4_K_XL GGUF (14.88GB). 24B MoE, 2B active. Fully GPU-resident. 3-way coherent sanity check passed."
