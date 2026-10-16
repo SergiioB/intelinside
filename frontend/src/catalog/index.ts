@@ -135,7 +135,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'nemotron-3-5-bolt-74b-a9b', name: 'Nemotron 3.5 Bolt 74B A9B', family: 'Nemotron 3.5', brand: 'Nemotron', params: '74B', architecture: 'moe', activeParams: '9B',
-    sourceUrl: 'https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-GGUF', logoUrl: '/logos/models/nemotron.svg', brandColor: '#8fc25c', quants: ['iq2_xxs'],
+    sourceUrl: 'https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16', logoUrl: '/logos/models/nemotron.svg', brandColor: '#8fc25c', quants: ['gptq-4bit', 'iq2_xxs', 'bf16'],
   },
   {
     id: 'muse-glimmer-30b', name: 'Muse Glimmer 30B', family: 'Muse', brand: 'Muse', params: '30B', architecture: 'dense',
