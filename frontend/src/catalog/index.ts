@@ -41,6 +41,10 @@ export const QUANTS: Quant[] = [
 
 export const MODELS: Model[] = [
   {
+    id: 'alodlm-8b', name: 'ALoDLM 8B', family: 'ALoDLM', brand: 'Amazon', params: '8B', architecture: 'dense',
+    sourceUrl: 'https://huggingface.co/amazon/ALoDLM-8B', logoUrl: '/logos/models/qwen.svg', brandColor: '#4a7fb5', quants: ['int4'],
+  },
+  {
     id: 'bonsai-2-27b', name: 'Bonsai 2 27B', family: 'Bonsai 2', brand: 'PrismML', params: '27B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf', logoUrl: '/logos/models/prismml.jpg', brandColor: '#4e9e5c', quants: ['ptq1_0'],
   },
