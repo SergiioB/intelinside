@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "9",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "underdog-saluki-27b",
+  "quant": "iq2_mix",
+  "runtime": "llamacpp",
+  "runtimeVersion": "version: 0.5.0-dev (build 1, commit 526c43b)",
+  "runtimeFlags": "llama.cpp Vulkan backend, -ngl 99 (all layers on GPU), ctx 4096, batch 1",
+  "decodeTps": 12.4,
+  "promptTps": 6.5,
+  "ttftMs": 10352.2,
+  "contextLength": 150,
+  "batchSize": 1,
+  "runDate": "2026-10-16",
+  "notes": "Kujira IQ2-mix-MTP GGUF (8.35GB). 27B ternary-mix with MTP; coherent but heavy dequant cost. 3-way coherent sanity check passed."
+}
