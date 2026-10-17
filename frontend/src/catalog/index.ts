@@ -23,6 +23,7 @@ export const QUANTS: Quant[] = [
   { id: 'fp16', label: 'FP16', bits: 16, format: 'Half precision, the unquantized weights' },
   { id: 'bf16', label: 'BF16', bits: 16, format: 'Brain float' },
   { id: 'q2_0', label: 'Q2_0', bits: 2, format: 'GGUF' },
+  { id: 'iq2_mix', label: 'IQ2_Mix', bits: 2, format: 'GGUF i-quant 2-bit mixture with MTP layers (Kujira packing)' },
   { id: 'q3_k_m', label: 'Q3_K_M', bits: 3, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_m', label: 'Q4_K_M', bits: 4, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_l', label: 'Q4_K_L', bits: 4, format: 'GGUF' },
@@ -97,6 +98,10 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/moonshotai/Moonlight-16B-A3B-Instruct', brandColor: '#9fc3e8', quants: ['q4_k_m'],
   },
   {
+    id: 'lfm2-5-24b-a2b', name: 'LFM2.5-24B-A2B', family: 'LFM2.5', brand: 'LFM', params: '24B', architecture: 'moe', activeParams: '2B',
+    sourceUrl: 'https://huggingface.co/LiquidAI/LFM2.5-24B-A2B', logoUrl: '/logos/models/liquid.svg', brandColor: '#6fc3d6', quants: ['int4', 'q4_k_xl'],
+  },
+  {
     id: 'lfm2-5-2-6b', name: 'LFM2.5-2.6B', family: 'LFM2.5', brand: 'LFM', params: '2.6B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/LiquidAI/LFM2.5-2.6B', logoUrl: '/logos/models/liquid.svg', brandColor: '#6fc3d6', quants: ['int4', 'int8', 'q4_k_m', 'q8_0', 'fp16'],
   },
@@ -107,6 +112,10 @@ export const MODELS: Model[] = [
   {
     id: 'ling-lite-1-5-2507', name: 'Ling Lite 1.5 2507', family: 'Ling Lite 1.5', brand: 'InclusionAI', params: '16.8B', architecture: 'moe', activeParams: '2.75B',
     sourceUrl: 'https://huggingface.co/inclusionAI/Ling-lite-1.5-2507', brandColor: '#7fb8e8', quants: ['q4_k_m'],
+  },
+  {
+    id: 'mellum-2-1-12b-a2-5b', name: 'Mellum 2.1 12B A2.5B Thinking', family: 'Mellum 2.1', brand: 'JetBrains', params: '12B', architecture: 'moe', activeParams: '2.5B',
+    sourceUrl: 'https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking', logoUrl: '/logos/models/llama.svg', brandColor: '#f369a0', quants: ['int4', 'q4_k_m'],
   },
   {
     id: 'llama-3-1-8b', name: 'Llama 3.1 8B Instruct', family: 'Llama 3.1', brand: 'Llama', params: '8B', architecture: 'dense',
@@ -199,6 +208,10 @@ export const MODELS: Model[] = [
   {
     id: 'qwen3-5-9b', name: 'Qwen3.5-9B', family: 'Qwen3.5', brand: 'Qwen', params: '9B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/Qwen/Qwen3.5-9B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'awq-4bit', 'q4_k_m', 'q8_0'],
+  },
+  {
+    id: 'underdog-saluki-27b', name: 'Underdog Saluki 27B', family: 'Underdog', brand: 'Underdog', params: '27B', architecture: 'moe', activeParams: '3B',
+    sourceUrl: 'https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0', logoUrl: '/logos/models/llama.svg', brandColor: '#8f8f8f', quants: ['iq2_mix'],
   },
   {
     id: 'qwen3-6-27b', name: 'Qwen3.6-27B', family: 'Qwen3.6', brand: 'Qwen', params: '27B', architecture: 'dense',
