@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "9",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "anon-1b",
+  "quant": "int4",
+  "runtime": "openvino-genai",
+  "runtimeVersion": "2026.4.0.0-3407-7ea2546852a",
+  "runtimeFlags": "OpenVINO GenAI 2026.4, GPU (Arc Pro B70, ReBAR on), int4-sym g128, ctx 4096, batch 1",
+  "decodeTps": 198.3,
+  "promptTps": 213.2,
+  "ttftMs": 70.3,
+  "contextLength": 143,
+  "batchSize": 1,
+  "runDate": "2026-10-16",
+  "notes": "scratchyone/anon-1b (gemma3_text, bf16 2.6GB). Self-export via optimum-intel 2.2 / NNCF 3.4 int4-sym g128 (MAX_TRANSFORMERS_VERSION cap lifted). 3-run mean decode 198.3/188.2/199.3 (last-6-token window), prompt 209-216, TTFT ~70ms. Fully GPU-resident. Single-file model, coherent sanity answers."
+}

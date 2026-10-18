@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "9",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "minicpm5-2b",
+  "quant": "int4",
+  "runtime": "openvino-genai",
+  "runtimeVersion": "2026.4.0.0-3407-7ea2546852a",
+  "runtimeFlags": "OpenVINO GenAI 2026.4, GPU (Arc Pro B70, ReBAR on), int4-sym g128, ctx 4096, batch 1",
+  "decodeTps": 137.4,
+  "promptTps": 149.9,
+  "ttftMs": 93.4,
+  "contextLength": 143,
+  "batchSize": 1,
+  "runDate": "2026-10-16",
+  "notes": "openbmb/MiniCPM5-2B (llama arch, bf16 5.0GB). Self-export via optimum-intel 2.2 / NNCF 3.4 int4-sym g128, standard CLI. 3-run mean decode 137.2/135.7/139.2, prompt ~150, TTFT ~93ms. Fully GPU-resident; fluent output (post-cutoff knowledge of Arc Pro B70 absent, same as peers)."
+}

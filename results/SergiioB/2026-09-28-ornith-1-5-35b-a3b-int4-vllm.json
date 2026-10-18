@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "1",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "ornith-1-5-35b-a3b",
+  "quant": "int4",
+  "runtime": "vllm",
+  "runtimeVersion": "0.27.2rc1.dev77+gac7509e2b (vllm-xpu-kernels 0.1.12.3)",
+  "runtimeFlags": "XPU WNA16 int_wna16; fp16; --no-enable-prefix-caching; scheduler 8192",
+  "decodeTps": 70.8,
+  "promptTps": 6935,
+  "contextLength": 32768,
+  "batchSize": 1,
+  "runDate": "2026-09-28",
+  "evidenceUrl": "https://github.com/SergiioB/intel-arc-pro-b70-inference-cookbook/blob/master/docs/ornith15-35a3/CLAIMS.md",
+  "notes": "MoE (35B total, 3B active). Isolated C1 greedy diagnostic, client post-first-token rate, median of n=5 after same-shape warmup; cache off for cold-input benchmarks; context 32768. promptTps is cold input rate at p2048 (actual tokens / client TTFT = 6935 tok/s; p8192: 6926 tok/s). MTP1 DraftINT4 reaches 106.27 tok/s at 16K context. Single card of a 2x B70 rig. Configured cap 150 W. Checkpoint SergiioB/Ornith-1.5-35B-A3B-GPTQ-Int4-sym-G128-MTP-BF16-MixedCal-v2 served from image vllm/vllm-openai-xpu@sha256:f01e24f6c7ff01f1e0662234255a1372297d1dbd89d003cf13c8fad3eab1ba4f. Evidence: cookbook docs/ornith15-35a3/CLAIMS.md. Self-reported, E2."
+}

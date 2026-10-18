@@ -23,6 +23,7 @@ export const QUANTS: Quant[] = [
   { id: 'fp16', label: 'FP16', bits: 16, format: 'Half precision, the unquantized weights' },
   { id: 'bf16', label: 'BF16', bits: 16, format: 'Brain float' },
   { id: 'q2_0', label: 'Q2_0', bits: 2, format: 'GGUF' },
+  { id: 'iq2_xxs', label: 'IQ2_XXS', bits: 2, format: 'GGUF i-quant, used by llama.cpp' },
   { id: 'iq2_mix', label: 'IQ2_Mix', bits: 2, format: 'GGUF i-quant 2-bit mixture with MTP layers (Kujira packing)' },
   { id: 'q3_k_m', label: 'Q3_K_M', bits: 3, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_m', label: 'Q4_K_M', bits: 4, format: 'GGUF, used by llama.cpp and Ollama' },
@@ -38,9 +39,18 @@ export const QUANTS: Quant[] = [
   { id: 'nf4', label: 'NF4', bits: 4, format: 'bitsandbytes' },
   { id: 'mxfp4', label: 'MXFP4', bits: 4, format: 'Microscaling FP4' },
   { id: 'exl3-4bpw', label: 'EXL3 4bpw', bits: 4, format: 'EXL3 trellis quantization (ExLlamaV3), ~4 bits per weight' },
+  { id: 'exl3-5bpw', label: 'EXL3 5bpw', bits: 5, format: 'EXL3 trellis quantization (ExLlamaV3), mixed-bit ~5 bits per weight' },
 ]
 
 export const MODELS: Model[] = [
+  {
+    id: 'alodlm-8b', name: 'ALoDLM 8B', family: 'ALoDLM', brand: 'Amazon', params: '8B', architecture: 'dense',
+    sourceUrl: 'https://huggingface.co/amazon/ALoDLM-8B', logoUrl: '/logos/models/qwen.svg', brandColor: '#4a7fb5', quants: ['int4'],
+  },
+  {
+    id: 'anon-1b', name: 'Anon 1B', family: 'Anon', brand: 'Anon', params: '1B', architecture: 'dense',
+    sourceUrl: 'https://huggingface.co/scratchyone/anon-1b', logoUrl: '/logos/models/gemma.svg', brandColor: '#9aa4b0', quants: ['int4'],
+  },
   {
     id: 'bonsai-2-27b', name: 'Bonsai 2 27B', family: 'Bonsai 2', brand: 'PrismML', params: '27B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf', logoUrl: '/logos/models/prismml.jpg', brandColor: '#4e9e5c', quants: ['ptq1_0'],
@@ -142,6 +152,10 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16', logoUrl: '/logos/models/nemotron.svg', brandColor: '#8fc25c', quants: ['gptq-4bit', 'q4_k_m', 'q8_0', 'bf16'],
   },
   {
+    id: 'nemotron-3-5-bolt-74b-a9b', name: 'Nemotron 3.5 Bolt 74B A9B', family: 'Nemotron 3.5', brand: 'Nemotron', params: '74B', architecture: 'moe', activeParams: '9B',
+    sourceUrl: 'https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16', logoUrl: '/logos/models/nemotron.svg', brandColor: '#8fc25c', quants: ['gptq-4bit', 'iq2_xxs', 'bf16'],
+  },
+  {
     id: 'muse-glimmer-30b', name: 'Muse Glimmer 30B', family: 'Muse', brand: 'Muse', params: '30B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/facebook/Muse-Glimmer-30B', logoUrl: '/logos/models/llama.svg', brandColor: '#73b0ee', quants: ['int4', 'q4_k_xl'],
   },
@@ -219,7 +233,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'qwen3-6-35b-a3b', name: 'Qwen3.6-35B-A3B', family: 'Qwen3.6', brand: 'Qwen', params: '35B', architecture: 'moe', activeParams: '3B',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.6-35B-A3B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'q3_k_m', 'q4_k_m', 'q8_0'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.6-35B-A3B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'q3_k_m', 'q4_k_m', 'q4_k_xl', 'q8_0'],
   },
   {
     id: 'qwen3-8-2-4t-a95b', name: 'Qwen3.8-2.4T-A95B', family: 'Qwen3.8', brand: 'Qwen', params: '2.4T', architecture: 'moe', activeParams: '95B',
@@ -227,11 +241,11 @@ export const MODELS: Model[] = [
   },
   {
     id: 'qwen3-8-27b', name: 'Qwen3.8-27B', family: 'Qwen3.8', brand: 'Qwen', params: '27B', architecture: 'dense',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-27B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'int8', 'q4_k_m', 'q4_k_l', 'q8_0', 'exl3-4bpw'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-27B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'int8', 'fp8', 'q4_k_m', 'q4_k_l', 'q8_0', 'exl3-4bpw', 'exl3-5bpw'],
   },
   {
     id: 'qwen3-8-flash-next', name: 'Qwen3.8-Flash-Next', family: 'Qwen3.8', brand: 'Qwen', params: '125B', architecture: 'moe', activeParams: '6B',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-Flash-Next', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['fp8', 'q2_0', 'q4_k_m', 'q8_0'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-Flash-Next', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['fp8', 'q2_0', 'q4_k_m', 'q4_k_xl', 'q8_0'],
   },
 ]
 
