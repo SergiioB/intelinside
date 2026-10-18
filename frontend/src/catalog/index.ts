@@ -224,7 +224,7 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/Qwen/Qwen3.5-9B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'awq-4bit', 'q4_k_m', 'q8_0'],
   },
   {
-    id: 'underdog-saluki-27b', name: 'Underdog Saluki 27B', family: 'Underdog', brand: 'Underdog', params: '27B', architecture: 'moe', activeParams: '3B',
+    id: 'underdog-saluki-27b', name: 'Underdog Saluki 27B', family: 'Underdog', brand: 'Underdog', params: '27B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0', logoUrl: '/logos/models/llama.svg', brandColor: '#8f8f8f', quants: ['iq2_mix'],
   },
   {
