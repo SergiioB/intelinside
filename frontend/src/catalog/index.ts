@@ -47,6 +47,10 @@ export const MODELS: Model[] = [
     sourceUrl: 'https://huggingface.co/amazon/ALoDLM-8B', logoUrl: '/logos/models/qwen.svg', brandColor: '#4a7fb5', quants: ['int4'],
   },
   {
+    id: 'anon-1b', name: 'Anon 1B', family: 'Anon', brand: 'Anon', params: '1B', architecture: 'dense',
+    sourceUrl: 'https://huggingface.co/scratchyone/anon-1b', logoUrl: '/logos/models/gemma.svg', brandColor: '#9aa4b0', quants: ['int4'],
+  },
+  {
     id: 'bonsai-2-27b', name: 'Bonsai 2 27B', family: 'Bonsai 2', brand: 'PrismML', params: '27B', architecture: 'dense',
     sourceUrl: 'https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf', logoUrl: '/logos/models/prismml.jpg', brandColor: '#4e9e5c', quants: ['ptq1_0'],
   },
