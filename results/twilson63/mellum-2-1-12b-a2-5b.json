@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "9",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "mellum-2-1-12b-a2-5b",
+  "quant": "q4_k_m",
+  "runtime": "llamacpp",
+  "runtimeVersion": "version: 0.5.0-dev (build 1, commit 526c43b)",
+  "runtimeFlags": "llama.cpp Vulkan backend, -ngl 99 (all layers on GPU), ctx 4096, batch 1",
+  "decodeTps": 175.5,
+  "promptTps": 153.7,
+  "ttftMs": 143.2,
+  "contextLength": 150,
+  "batchSize": 1,
+  "runDate": "2026-10-16",
+  "notes": "JetBrains/Mellum2.1-12B-A2.5B-Thinking-GGUF Q4_K_M (8.07GB). 12B MoE, 2.5B active. Fully GPU-resident. 3-way coherent sanity check passed."
+}
