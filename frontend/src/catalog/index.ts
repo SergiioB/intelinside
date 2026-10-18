@@ -24,7 +24,7 @@ export const QUANTS: Quant[] = [
   { id: 'bf16', label: 'BF16', bits: 16, format: 'Brain float' },
   { id: 'q2_0', label: 'Q2_0', bits: 2, format: 'GGUF' },
   { id: 'iq2_xxs', label: 'IQ2_XXS', bits: 2, format: 'GGUF i-quant, used by llama.cpp' },
-  { id: 'iq2_mix', label: 'IQ2_Mix', bits: 2, format: 'GGUF i-quant 2-bit mixture with MTP layers (Kujira packing)' },
+  { id: 'iq2_mix', label: 'IQ2_Mix', bits: 2, format: 'GGUF 2-bit i-quant mix, used by llama.cpp' },
   { id: 'q3_k_m', label: 'Q3_K_M', bits: 3, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_m', label: 'Q4_K_M', bits: 4, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_l', label: 'Q4_K_L', bits: 4, format: 'GGUF' },
