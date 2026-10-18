@@ -14,5 +14,5 @@
   "contextLength": 150,
   "batchSize": 1,
   "runDate": "2026-10-16",
-  "notes": "Kujira IQ2-mix-MTP GGUF (8.35GB). 27B ternary-mix with MTP; coherent but heavy dequant cost. 3-way coherent sanity check passed."
+  "notes": "ConwayResearch Underdog-Saluki-27B-1.0 IQ2-mix GGUF (7.90GB), a 2-bit i-quant mix of dense Qwen3.8-27B; coherent but heavy dequant cost. 3-way coherent sanity check passed."
 }
