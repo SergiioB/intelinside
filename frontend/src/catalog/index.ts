@@ -23,6 +23,7 @@ export const QUANTS: Quant[] = [
   { id: 'fp16', label: 'FP16', bits: 16, format: 'Half precision, the unquantized weights' },
   { id: 'bf16', label: 'BF16', bits: 16, format: 'Brain float' },
   { id: 'q2_0', label: 'Q2_0', bits: 2, format: 'GGUF' },
+  { id: 'iq2_xxs', label: 'IQ2_XXS', bits: 2, format: 'GGUF i-quant, used by llama.cpp' },
   { id: 'q3_k_m', label: 'Q3_K_M', bits: 3, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_m', label: 'Q4_K_M', bits: 4, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_l', label: 'Q4_K_L', bits: 4, format: 'GGUF' },
@@ -131,6 +132,10 @@ export const MODELS: Model[] = [
   {
     id: 'nemotron-3-5-lightning-30b-a3b', name: 'Nemotron 3.5 Lightning 30B A3B', family: 'Nemotron 3.5', brand: 'Nemotron', params: '30B', architecture: 'moe', activeParams: '3B',
     sourceUrl: 'https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16', logoUrl: '/logos/models/nemotron.svg', brandColor: '#8fc25c', quants: ['gptq-4bit', 'q4_k_m', 'q8_0', 'bf16'],
+  },
+  {
+    id: 'nemotron-3-5-bolt-74b-a9b', name: 'Nemotron 3.5 Bolt 74B A9B', family: 'Nemotron 3.5', brand: 'Nemotron', params: '74B', architecture: 'moe', activeParams: '9B',
+    sourceUrl: 'https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16', logoUrl: '/logos/models/nemotron.svg', brandColor: '#8fc25c', quants: ['gptq-4bit', 'iq2_xxs', 'bf16'],
   },
   {
     id: 'muse-glimmer-30b', name: 'Muse Glimmer 30B', family: 'Muse', brand: 'Muse', params: '30B', architecture: 'dense',
