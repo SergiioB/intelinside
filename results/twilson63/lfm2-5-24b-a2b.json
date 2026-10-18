@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "9",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "lfm2-5-24b-a2b",
+  "quant": "q4_k_xl",
+  "runtime": "llamacpp",
+  "runtimeVersion": "version: 0.5.0-dev (build 1, commit 526c43b)",
+  "runtimeFlags": "llama.cpp Vulkan backend, -ngl 99 (all layers on GPU), ctx 4096, batch 1",
+  "decodeTps": 147.8,
+  "promptTps": 68.0,
+  "ttftMs": 338.4,
+  "contextLength": 143,
+  "batchSize": 1,
+  "runDate": "2026-10-16",
+  "notes": "unsloth UD-Q4_K_XL GGUF (14.88GB). 24B MoE, 2B active. Fully GPU-resident. 3-way coherent sanity check passed."
+}
