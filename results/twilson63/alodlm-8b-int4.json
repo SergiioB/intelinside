@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "9",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "alodlm-8b",
+  "quant": "int4",
+  "runtime": "openvino-genai",
+  "runtimeVersion": "2026.4.0.0-3407-7ea2546852a",
+  "runtimeFlags": "OpenVINO GenAI 2026.4, GPU (Arc Pro B70, ReBAR on), int4-sym g128, ctx 4096, batch 1",
+  "decodeTps": 96.0,
+  "promptTps": 125.5,
+  "ttftMs": 119.6,
+  "contextLength": 143,
+  "batchSize": 1,
+  "runDate": "2026-10-16",
+  "notes": "amazon/ALoDLM-8B (qwen3 arch, bf16 16.4GB). Self-export via optimum-intel 2.2 / NNCF 3.4 int4-sym g128, standard CLI. Single run: decode 96.0 tok/s, prompt 125.5, TTFT 119.6ms - statistically identical to stock Qwen3-8B's 95.2 on the same rig (same arch, same quant). Fully GPU-resident; correct factual answer in sanity check."
+}
