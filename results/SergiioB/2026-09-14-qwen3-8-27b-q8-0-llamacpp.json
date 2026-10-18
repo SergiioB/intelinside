@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/labscommunity/intelinside/main/results/schema.json",
+  "rig": "1",
+  "component": "intel-arc-pro-b70",
+  "componentQuantity": 1,
+  "model": "qwen3-8-27b",
+  "quant": "q8_0",
+  "runtime": "llamacpp",
+  "runtimeVersion": "SYCL 0.3.0-dev 1692f9e50 (build 361)",
+  "runtimeFlags": "-fa 1, -ngl 99, -b 8192, -ub 4096, KV q8_0 K / q4_1 V, no speculative decode",
+  "decodeTps": 13.62,
+  "promptTps": 853.08,
+  "contextLength": 8192,
+  "batchSize": 1,
+  "runDate": "2026-09-14",
+  "evidenceUrl": "https://github.com/SergiioB/intel-arc-pro-b70-inference-cookbook/blob/master/docs/qwen38-27b/QUANT-FORMAT-SHOWDOWN-B70.md",
+  "notes": "Dense 27B hybrid-attention (GDN). llama-bench engine-native tg128 at p512 (13.62 tok/s) and p8192 (13.54 tok/s), mean of 5 repetitions; engine-native timing. promptTps is llama-bench engine-native pp8192 (853.08 tok/s; pp2048: 864.56 tok/s). No speculative decode. Q8_0 29.05 GB freshly quantized from the SHA-verified BF16 release; decode is cap-insensitive (13.6 tok/s at both 150 W and 230 W). Single card of a 2x B70 rig. Configured cap 150 W. Correctness: coherent-output smoke plus llama-quantize perplexity arms. Evidence: cookbook docs/qwen38-27b/QUANT-FORMAT-SHOWDOWN-B70.md. Self-reported, E2."
+}
