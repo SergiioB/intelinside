@@ -50,6 +50,12 @@ retrieved on 2026-09-29 from [the original asset](https://cdn-avatars.huggingfac
 The source URL ends in `.png`, but the downloaded asset is WebP.
 It is used for Inkling, with its original black wordmark and white background.
 
+`conway.webp` is the unmodified 200 × 200 organization avatar from
+[Conway's Hugging Face profile](https://huggingface.co/ConwayResearch), retrieved on 2026-10-18 from
+[the original asset](https://cdn-avatars.huggingface.co/v1/production/uploads/6313bc14e29fb2e86d60fd39/jz0do3ejmuBT2Q_dsXJu6.png).
+The source URL ends in `.png`, but the downloaded asset is WebP.
+It is used for Underdog Saluki 27B.
+
 `prismml.jpg` is the unmodified 400 × 400 profile avatar from
 [PrismML’s X account](https://x.com/PrismML), retrieved on 2026-09-29 from
 [X’s image CDN](https://pbs.twimg.com/profile_images/2025105666692812800/QQOxLQPq.jpg).
