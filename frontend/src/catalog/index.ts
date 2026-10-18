@@ -38,6 +38,7 @@ export const QUANTS: Quant[] = [
   { id: 'nf4', label: 'NF4', bits: 4, format: 'bitsandbytes' },
   { id: 'mxfp4', label: 'MXFP4', bits: 4, format: 'Microscaling FP4' },
   { id: 'exl3-4bpw', label: 'EXL3 4bpw', bits: 4, format: 'EXL3 trellis quantization (ExLlamaV3), ~4 bits per weight' },
+  { id: 'exl3-5bpw', label: 'EXL3 5bpw', bits: 5, format: 'EXL3 trellis quantization (ExLlamaV3), mixed-bit ~5 bits per weight' },
 ]
 
 export const MODELS: Model[] = [
@@ -211,7 +212,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'qwen3-6-35b-a3b', name: 'Qwen3.6-35B-A3B', family: 'Qwen3.6', brand: 'Qwen', params: '35B', architecture: 'moe', activeParams: '3B',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.6-35B-A3B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'q3_k_m', 'q4_k_m', 'q8_0'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.6-35B-A3B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'q3_k_m', 'q4_k_m', 'q4_k_xl', 'q8_0'],
   },
   {
     id: 'qwen3-8-2-4t-a95b', name: 'Qwen3.8-2.4T-A95B', family: 'Qwen3.8', brand: 'Qwen', params: '2.4T', architecture: 'moe', activeParams: '95B',
@@ -219,11 +220,11 @@ export const MODELS: Model[] = [
   },
   {
     id: 'qwen3-8-27b', name: 'Qwen3.8-27B', family: 'Qwen3.8', brand: 'Qwen', params: '27B', architecture: 'dense',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-27B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'int8', 'q4_k_m', 'q4_k_l', 'q8_0', 'exl3-4bpw'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-27B', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['int4', 'int8', 'fp8', 'q4_k_m', 'q4_k_l', 'q8_0', 'exl3-4bpw', 'exl3-5bpw'],
   },
   {
     id: 'qwen3-8-flash-next', name: 'Qwen3.8-Flash-Next', family: 'Qwen3.8', brand: 'Qwen', params: '125B', architecture: 'moe', activeParams: '6B',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-Flash-Next', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['fp8', 'q2_0', 'q4_k_m', 'q8_0'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-Flash-Next', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['fp8', 'q2_0', 'q4_k_m', 'q4_k_xl', 'q8_0'],
   },
 ]
 
