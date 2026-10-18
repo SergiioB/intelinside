@@ -125,7 +125,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'mellum-2-1-12b-a2-5b', name: 'Mellum 2.1 12B A2.5B Thinking', family: 'Mellum 2.1', brand: 'JetBrains', params: '12B', architecture: 'moe', activeParams: '2.5B',
-    sourceUrl: 'https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking', logoUrl: '/logos/models/llama.svg', brandColor: '#f369a0', quants: ['int4', 'q4_k_m'],
+    sourceUrl: 'https://huggingface.co/JetBrains/Mellum2.1-12B-A2.5B-Thinking', logoUrl: '/logos/models/jetbrains.webp', brandColor: '#f369a0', quants: ['int4', 'q4_k_m'],
   },
   {
     id: 'llama-3-1-8b', name: 'Llama 3.1 8B Instruct', family: 'Llama 3.1', brand: 'Llama', params: '8B', architecture: 'dense',

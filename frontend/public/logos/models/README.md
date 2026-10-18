@@ -56,6 +56,12 @@ It is used for Inkling, with its original black wordmark and white background.
 The source URL ends in `.png`, but the downloaded asset is WebP.
 It is used for Underdog Saluki 27B.
 
+`jetbrains.webp` is the unmodified 200 × 200 organization avatar from
+[JetBrains' Hugging Face profile](https://huggingface.co/JetBrains), retrieved on 2026-10-18 from
+[the original asset](https://cdn-avatars.huggingface.co/v1/production/uploads/6645d54b780d46f274dd4145/8RHS3MzGGBFWtH1-bynJ0.png).
+The source URL ends in `.png`, but the downloaded asset is WebP.
+It is used for Mellum 2.1 12B A2.5B Thinking.
+
 `prismml.jpg` is the unmodified 400 × 400 profile avatar from
 [PrismML’s X account](https://x.com/PrismML), retrieved on 2026-09-29 from
 [X’s image CDN](https://pbs.twimg.com/profile_images/2025105666692812800/QQOxLQPq.jpg).
