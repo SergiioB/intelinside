@@ -13,6 +13,7 @@ export const RUNTIMES: Runtime[] = [
   { id: 'openvino-genai', name: 'OpenVINO GenAI', logoUrl: '', repoUrl: 'https://github.com/openvinotoolkit/openvino.genai', color: '#6ab8e4' },
   { id: 'ipex-llm', name: 'IPEX-LLM', logoUrl: '', repoUrl: 'https://github.com/intel/ipex-llm', color: '#64c6ad' },
   { id: 'exl3xpu', name: 'EXL3 XPU', logoUrl: '', repoUrl: 'https://github.com/0xSero/exl3xpu', color: '#e8875a' },
+  { id: 'strata', name: 'Strata', logoUrl: '', repoUrl: 'https://github.com/Niko1221/Strata', color: '#9ec773' },
 ]
 
 export const QUANTS: Quant[] = [
@@ -25,6 +26,8 @@ export const QUANTS: Quant[] = [
   { id: 'q2_0', label: 'Q2_0', bits: 2, format: 'GGUF' },
   { id: 'iq2_xxs', label: 'IQ2_XXS', bits: 2, format: 'GGUF i-quant, used by llama.cpp' },
   { id: 'iq2_mix', label: 'IQ2_Mix', bits: 2, format: 'GGUF 2-bit i-quant mix, used by llama.cpp' },
+  { id: 'iq3_xxs', label: 'IQ3_XXS', bits: 3, format: 'GGUF i-quant; GSQ-RCO mixed tensors retain their model-file quant label' },
+  { id: 'iq3_s', label: 'IQ3_S', bits: 3, format: 'GGUF i-quant; GSQ-RCO mixed tensors retain their model-file quant label' },
   { id: 'q3_k_m', label: 'Q3_K_M', bits: 3, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_m', label: 'Q4_K_M', bits: 4, format: 'GGUF, used by llama.cpp and Ollama' },
   { id: 'q4_k_l', label: 'Q4_K_L', bits: 4, format: 'GGUF' },
@@ -245,7 +248,7 @@ export const MODELS: Model[] = [
   },
   {
     id: 'qwen3-8-flash-next', name: 'Qwen3.8-Flash-Next', family: 'Qwen3.8', brand: 'Qwen', params: '125B', architecture: 'moe', activeParams: '6B',
-    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-Flash-Next', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['fp8', 'q2_0', 'q4_k_m', 'q4_k_xl', 'q8_0'],
+    sourceUrl: 'https://huggingface.co/Qwen/Qwen3.8-Flash-Next', logoUrl: '/logos/models/qwen.svg', brandColor: '#b699eb', quants: ['fp8', 'q2_0', 'iq3_xxs', 'iq3_s', 'q4_k_m', 'q4_k_xl', 'q8_0'],
   },
 ]
 

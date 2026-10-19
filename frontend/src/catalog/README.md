@@ -65,6 +65,9 @@ leave it out and the UI draws a monogram tile in `brandColor`.
 `QUANTS` needs `label` (as people write it: `Q4_K_M`), `bits`, and a one-line `format` used in tooltips. GGUF
 quant ids keep their underscores; everything else is hyphenated.
 
+For GSQ-RCO Flash-Next files, keep `IQ3_XXS` and `IQ3_S` as separate boards; neither is `Q2_0`.
+Use the `strata` runtime for Strata results. Register XeStrata forks as custom runtimes under it, not under llama.cpp.
+
 `RUNTIMES` needs `name`, `repoUrl` (every runtime badge links to it), and a six-digit hex `color`. The badge
 looks for a mark in three places, in order: `logoUrl`, an SVG under `frontend/public/logos/runtimes/`; a
 generated mark, if you add the runtime to the `RUNTIMES` map in `frontend/scripts/generate-marks.mjs` and run
